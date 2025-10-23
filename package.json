@@ -1,5 +1,5 @@
 {
-  "name": "sila-md-mini",
+  "name": "prince-md-mini",
   "version": "1.0.0",
   "description": "WhatsApp Bot with Multi-Number Support (file storage)",
   "main": "main.js",
@@ -29,6 +29,6 @@
     "multi-device",
     "baileys"
   ],
-  "author": "Sila Md",
+  "author": "prince Md",
   "license": "MIT"
 }
