@@ -121,7 +121,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
             isForwarded: true, 
             forwardingScore: 99999999,
             externalAdReply: {
-              title: "SILA MD MINI",
+              title: "PRINCE MD MINI",
               body: "𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚂𝙸𝙻𝙰 𝙼𝙳",
               thumbnailUrl: botImg,
               sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
@@ -161,8 +161,8 @@ async function kavixmdminibotmessagehandler(socket, number) {
               const message = `*SILA MINI BOT  MENU 🤍*
 
 *╭━━━━━━━━━━━━━━━━●◌*
-*│ \`● Greet :\`* *Hello 👋*
-*│ \`● Bot Name :\`* SILA MD MINI
+*│ \`● Greet :\`* *Hi 👋*
+*│ \`● Bot Name :\`* PRINCE MD MINI
 *│ \`● Run Time :\`* ${hours}h ${minutes}m ${seconds}s
 *│ \`● Your Number :\`* ${sanitizedNumber}
 *│ \`● Active Bots :\`* ${activeBots}
@@ -290,7 +290,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
                 caption: message,
                 contextInfo: {
                   externalAdReply: {
-                    title: "SILA MD MINI",
+                    title: "PRINCE MD MINI",
                     body: "View Our Channel",
                     thumbnailUrl: botImg,
                     sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
