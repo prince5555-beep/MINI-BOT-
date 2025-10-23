@@ -2,10 +2,10 @@
   "name": "prince-md-mini",
   "version": "1.0.0",
   "description": "WhatsApp Bot with Multi-Number Support (file storage)",
-  "main": "prince.js",
+  "prince": "prince.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node main.js"
+    "start": "node prince.js"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "npm:baileys-mod",
