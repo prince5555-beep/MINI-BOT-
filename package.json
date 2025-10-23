@@ -2,7 +2,7 @@
   "name": "prince-md-mini",
   "version": "1.0.0",
   "description": "WhatsApp Bot with Multi-Number Support (file storage)",
-  "main": "main.js",
+  "main": "prince.js",
   "type": "commonjs",
   "scripts": {
     "start": "node main.js"
