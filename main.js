@@ -279,6 +279,9 @@ async function kavixmdminibotmessagehandler(socket, number) {
 │    \`■ Command :\` .vv
 │  *🍃 Download Oneview Massages*
 │
+    \`■ Command :\` .delete 
+│  *🍃 message deleted with prince mini
+
 │    \`■ Command :\` .freebot 
 │  *🍃 Connect Our Bot To Your Whatsapp*
 ╰━━━━━━━━━━━━━━━━━●◌
@@ -740,6 +743,34 @@ async function kavixmdminibotmessagehandler(socket, number) {
             }
             break;
           }
+            case 'delete': case 'del': {
+        try {
+          await socket.sendMessage(msg.key.remoteJid, { react: { text: "🗑️", key: msg.key }}, { quoted: msg });
+          
+          const quoted = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage;
+          const quotedKey = msg.message?.extendedTextMessage?.contextInfo?.stanzaId;
+          const quotedParticipant = msg.message?.extendedTextMessage?.contextInfo?.participant;
+          
+          if (!quoted || !quotedKey) {
+            return await replygckavi("🚫 Please reply to a message you want to delete.");
+          }
+
+          await socket.sendMessage(msg.key.remoteJid, {
+            delete: {
+              remoteJid: msg.key.remoteJid,
+              fromMe: msg.key.fromMe || quotedParticipant === socket.user.id,
+              id: quotedKey,
+              participant: quotedParticipant
+            }
+          });
+          
+          await replygckavi("✅ Message deleted successfully.");
+        } catch (err) {
+          await replygckavi("🚫 Failed to delete message. Make sure it’s your own message or replied one.");
+          console.error(err);
+        }
+        break;
+      }
 
           case 'freebot': {
             try {
