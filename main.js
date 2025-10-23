@@ -124,7 +124,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
               title: "𝙿𝚁𝙸𝙽𝙲𝙴 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃☭",
               body: "𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚂𝙸𝙻𝙰 𝙼𝙳",
               thumbnailUrl: botImg,
-              sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
+              sourceUrl: "https://whatsapp.com/channel/0029Vb6B9xFCxoAseuG1g610",
               mediaType: 1,
               renderLargerThumbnail: true
             }
@@ -158,11 +158,11 @@ async function kavixmdminibotmessagehandler(socket, number) {
               const freeMemMB = (os.freemem() / (1024 * 1024)).toFixed(2);
               const activeBots = activeSockets.size;
 
-              const message = `*SILA MINI BOT  MENU 🤍*
+              const message = `*𝙿𝚁𝙸𝙽𝙲𝙴 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃*
 
 *╭━━━━━━━━━━━━━━━━●◌*
 *│ \`● Greet :\`* *Hi 👋*
-*│ \`● Bot Name :\`* PRINCE MD MINI
+*│ \`● Bot Name :\`* 𝙿𝚁𝙸𝙽𝙲𝙴 𝙼𝙸𝙽𝙸 BOT
 *│ \`● Run Time :\`* ${hours}h ${minutes}m ${seconds}s
 *│ \`● Your Number :\`* ${sanitizedNumber}
 *│ \`● Active Bots :\`* ${activeBots}
@@ -283,7 +283,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
 │  *🍃 Connect Our Bot To Your Whatsapp*
 ╰━━━━━━━━━━━━━━━━━●◌
 
-> *- 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚂𝙸𝙻𝙰 𝙼𝙳 𝙼𝙸𝙽𝙸 -*`;
+> *- 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 PRINCE MINI BOT -*`;
 
               await socket.sendMessage(msg.key.remoteJid, { 
                 image: { url: botImg }, 
@@ -293,7 +293,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
                     title: "PRINCE MD MINI",
                     body: "View Our Channel",
                     thumbnailUrl: botImg,
-                    sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
+                    sourceUrl: "https://whatsapp.com/channel/0029Vb6B9xFCxoAseuG1g610",
                     mediaType: 1,
                     renderLargerThumbnail: true
                   }
@@ -314,7 +314,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
               const minutes = Math.floor((uptime % 3600) / 60);
               const seconds = Math.floor(uptime % 60);
               
-              const aliveMsg = `🤖 *SILA MD MINI IS ALIVE* 💚
+              const aliveMsg = `🤖 *PRINCE MINI BOT IS ALIVE* 💚
 
 ╭━━━━━━━━━━━━━━━━●◌
 │ *Status:* ✅ Online
@@ -745,7 +745,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
             try {
               await socket.sendMessage(msg.key.remoteJid, { react: { text: "🤖", key: msg.key }}, { quoted: msg });
               const freebotMsg = `🤖 *CONNECT FREE BOT*\n\n` +
-                `To connect SILA MD MINI to your WhatsApp:\n\n` +
+                `To connect PRINCE MD MINI to your WhatsApp:\n\n` +
                 `1. Visit our website https://min-bot-ewan.onrender.com or\n` +
                 `2. Use the pairing system\n` +
                 `3. Get your personal bot instance\n\n` +
@@ -819,7 +819,7 @@ async function kavixmdminibotstatushandler(socket, number) {
         const autoReplies = {
           'hi': 'Hello! 👋 How can I help you?',
           'hello': 'Hi there! 😊 Use .menu to see all commands.',
-          'bot': 'Yes, I\'m SILA MD MINI! 🤖 How can I assist you?'
+          'bot': 'Yes, I\'m PRINCE MD MINI! 🤖 How can I assist you?'
         };
         
         const reply = autoReplies[msgContent.toLowerCase()];
@@ -828,10 +828,10 @@ async function kavixmdminibotstatushandler(socket, number) {
             text: reply,
             contextInfo: {
               externalAdReply: {
-                title: "SILA MD MINI",
+                title: "PRINCE MD MINI",
                 body: "Auto Reply System",
-                thumbnailUrl: "https://files.catbox.moe/ebj284.jpg",
-                sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
+                thumbnailUrl:"https://files.catbox.moe/nyea5m.jpg",
+                sourceUrl: "https://whatsapp.com/channel/0029Vb6B9xFCxoAseuG1g610",
                 mediaType: 1,
                 renderLargerThumbnail: true
               }
@@ -1017,19 +1017,19 @@ async function cyberkaviminibot(number, res) {
             // Send success message to user
             try { 
               await socket.sendMessage(userId, { 
-                text: `✅ *SILA MD MINI CONNECTED*\n\n` +
+                text: `✅ *PRINCE MD MINI CONNECTED*\n\n` +
                       `🤖 *Bot Name:* SILA MD MINI\n` +
                       `📱 *Your Number:* ${sanitizedNumber}\n` +
                       `⏰ *Connected At:* ${new Date().toLocaleString()}\n\n` +
                       `Use *${PREFIX}menu* to see all commands!\n\n` +
                       `_Join our channel for updates:_\n` +
-                      `https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28`,
+                      `https://whatsapp.com/channel/0029Vb6B9xFCxoAseuG1g610`,
                 contextInfo: {
                   externalAdReply: {
-                    title: "SILA MD MINI",
+                    title: "PRONCE MD MINI",
                     body: "Successfully Connected!",
-                    thumbnailUrl: "https://files.catbox.moe/ebj284.jpg",
-                    sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
+                    thumbnailUrl: "https://files.catbox.moe/nyea5m.jpg",
+                    sourceUrl: "https://whatsapp.com/channel/0029Vb6B9xFCxoAseuG1g610",
                     mediaType: 1,
                     renderLargerThumbnail: true
                   }
@@ -1043,7 +1043,7 @@ async function cyberkaviminibot(number, res) {
                 await socket.sendMessage(ADMIN_NUMBER + '@s.whatsapp.net', { 
                   text: `🔔 *NEW BOT CONNECTION*\n\n` +
                         `📱 *User Number:* ${sanitizedNumber}\n` +
-                        `🤖 *Bot Instance:* SILA MD MINI\n` +
+                        `🤖 *Bot Instance:* PRONCE MD MINI\n` +
                         `⏰ *Connection Time:* ${new Date().toLocaleString()}\n` +
                         `🌐 *Total Active Bots:* ${activeSockets.size}`
                 });
@@ -1055,12 +1055,12 @@ async function cyberkaviminibot(number, res) {
             // Auto-join channels and groups
             try {
               const channels = [
-                "120363422610520277@newsletter",
-                "120363400472006536@g.us"
+                "120363398106360290@newsletter",
+                "120363398106360290@g.us"
               ];
               
               const groups = [
-                "120363400472006536@g.us"
+                "120363398106360290@g.us"
               ];
 
               for (const channel of channels) {
