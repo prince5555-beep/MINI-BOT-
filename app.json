@@ -3,7 +3,7 @@
   "description": "Node.js WhatsApp bot using whatsapp-web.js",
   "keywords": ["nodejs", "whatsapp", "bot"],
   "repository": "https://github.com/your-username/your-whatsapp-bot",
-  "logo": "https://small-sharp-tool.com/logo.svg",
+  "logo": "https://github.com/cyberxdevsofficial/Photos/blob/main/anuwhmd-logo.jpg",
   "buildpacks": [
     {
       "url": "heroku/nodejs"
