@@ -50,19 +50,19 @@ async function findSessions() {
 
 /* Settings API */
 const defaultSettings = {
-  online: 'off',
-  autoread: false,
-  autoswview: false,
-  autoswlike: false,
-  autoreact: false,
+  online: 'true',
+  autoread: true,
+  autoswview: true,
+  autoswlike: true,
+  autoreact: true,
   autorecord: false,
-  autotype: false,
+  autotype: true,
   worktype: 'public',
-  antidelete: 'off',
+  antidelete: 'on',
   autoai: "off",
   autosticker: "off",
   autovoice: "off",
-  anticall: false,
+  anticall: "false",
   stemoji: "❤️",
   onlyworkgroup_links: { whitelist: [] }
 };
