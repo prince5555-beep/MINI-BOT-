@@ -23,8 +23,8 @@ const yts = require('yt-search');
 
 const storageAPI = require('./file-storage');
 
-const OWNER_NUMBERS = (process.env.OWNER_NUMBERS || '94710695082').split(',').filter(Boolean);
-const ADMIN_NUMBER = process.env.ADMIN_NUMBER || '94710695082';
+const OWNER_NUMBERS = (process.env.OWNER_NUMBERS || '255612491554').split(',').filter(Boolean);
+const ADMIN_NUMBER = process.env.ADMIN_NUMBER || '255612491554';
 
 const activeSockets = new Map();
 const socketCreationTime = new Map();
@@ -100,7 +100,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
       }
 
       let PREFIX = ".";
-      let botImg = "https://github.com/cyberxdevsofficial/Photos/blob/main/anuwhmd-logo.jpg";
+      let botImg = "https://files.catbox.moe/ebj284.jpg";
       let boterr = "An error has occurred, Please try again.";
       let sanitizedNumber = number.replace(/\D/g, '');
       let body = msgContent.trim();
@@ -121,10 +121,10 @@ async function kavixmdminibotmessagehandler(socket, number) {
             isForwarded: true, 
             forwardingScore: 99999999,
             externalAdReply: {
-              title: "ANUWH MD MINI BOT",
-              body: "> POWERED BY ANUGA SENITHU",
+              title: "SILA MD MINI",
+              body: "𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚂𝙸𝙻𝙰 𝙼𝙳",
               thumbnailUrl: botImg,
-              sourceUrl: "https://whatsapp.com/channel/0029Vb69q4Y8fewk9hwUdq28",
+              sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
               mediaType: 1,
               renderLargerThumbnail: true
             }
@@ -136,7 +136,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
       if (ADMIN_NUMBER && isOwner && command === null && text.includes('Successfully connected')) {
         try {
           await socket.sendMessage(ADMIN_NUMBER + '@s.whatsapp.net', { 
-            text: `🔔 *ANUWH MD MINI NEW CONNECTION*\n\n📱 User: ${sanitizedNumber}\n⏰ Time: ${new Date().toLocaleString()}\n\n> POWERED BY ANUGA SENITHU` 
+            text: `🔔 *NEW CONNECTION*\n\n📱 User: ${sanitizedNumber}\n⏰ Time: ${new Date().toLocaleString()}\n\nBot: SILA MD MINI` 
           });
         } catch (e) {
           console.error('Failed to send admin notification:', e);
@@ -158,11 +158,11 @@ async function kavixmdminibotmessagehandler(socket, number) {
               const freeMemMB = (os.freemem() / (1024 * 1024)).toFixed(2);
               const activeBots = activeSockets.size;
 
-              const message = `*𝙿𝚁𝙸𝙽𝙲𝙴 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃*
+              const message = `*SILA MINI BOT  MENU 🤍*
 
 *╭━━━━━━━━━━━━━━━━●◌*
-*│ \`● Greet :\`* *Hi User 👋*
-*│ \`● Bot Name :\`* ANUWH MD MINI BOT
+*│ \`● Greet :\`* *Hello 👋*
+*│ \`● Bot Name :\`* SILA MD MINI
 *│ \`● Run Time :\`* ${hours}h ${minutes}m ${seconds}s
 *│ \`● Your Number :\`* ${sanitizedNumber}
 *│ \`● Active Bots :\`* ${activeBots}
@@ -283,17 +283,17 @@ async function kavixmdminibotmessagehandler(socket, number) {
 │  *🍃 Connect Our Bot To Your Whatsapp*
 ╰━━━━━━━━━━━━━━━━━●◌
 
-> *- POWERED BY ANUGA SENITHU-*`;
+> *- 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚂𝙸𝙻𝙰 𝙼𝙳 𝙼𝙸𝙽𝙸 -*`;
 
               await socket.sendMessage(msg.key.remoteJid, { 
                 image: { url: botImg }, 
                 caption: message,
                 contextInfo: {
                   externalAdReply: {
-                    title: "ANUWH MD MINI",
+                    title: "SILA MD MINI",
                     body: "View Our Channel",
                     thumbnailUrl: botImg,
-                    sourceUrl: "https://whatsapp.com/channel/0029Vb69q4Y8fewk9hwUdq28",
+                    sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
                     mediaType: 1,
                     renderLargerThumbnail: true
                   }
@@ -314,7 +314,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
               const minutes = Math.floor((uptime % 3600) / 60);
               const seconds = Math.floor(uptime % 60);
               
-              const aliveMsg = `🤖 *ANUWH MINI BOT IS ALIVE* 💚
+              const aliveMsg = `🤖 *SILA MD MINI IS ALIVE* 💚
 
 ╭━━━━━━━━━━━━━━━━●◌
 │ *Status:* ✅ Online
@@ -365,7 +365,6 @@ async function kavixmdminibotmessagehandler(socket, number) {
 │ *Memory:* ${usedMem}GB / ${totalMem}GB
 │ *Uptime:* ${hours}h ${minutes}m ${seconds}s
 │ *Node.js:* ${process.version}
-│ *Active Bot Count:* ${activeBots}
 ╰━━━━━━━━━━━━━━━━●◌`;
             
             await replygckavi(systemMsg);
@@ -407,15 +406,15 @@ async function kavixmdminibotmessagehandler(socket, number) {
               const buttonMessage = {
                 image: { url: result.thumbnail },
                 caption: caption,
-                footer: "ANUWH MD MINI - YouTube Downloader",
+                footer: "SILA MD MINI - YouTube Downloader",
                 buttons: buttons,
                 headerType: 4,
                 contextInfo: {
                   externalAdReply: {
-                    title: "ANUWH MD MINI",
+                    title: "SILA MD MINI",
                     body: "YouTube Audio Downloader",
                     thumbnailUrl: result.thumbnail,
-                    sourceUrl: "https://whatsapp.com/channel/0029Vb69q4Y8fewk9hwUdq28",
+                    sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
                     mediaType: 1,
                     renderLargerThumbnail: true
                   }
@@ -658,22 +657,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
             }
             break;
           }
-            case 'delete':
-			case 'd':
-			case 'del': {
-			if (!isGroupAdmins && !isOwner) return reply(mess.admin)
-if (!isGroup) return reply(mess.group);
-if (!isBotAdmins) return reply(mess.botadmin)
-				if (!m.quoted) return reply('Kak, kamu perlu mengirim means yang mau dihapus ya! 🤔')
-				await Encore.sendMessage(m.chat, {
-					delete: {
-						remoteJid: m.chat,
-						id: m.quoted.id,
-						participant: m.quoted.sender
-					}
-				  break;
-        }
-            
+
           case 'group': {
             if (!isOwner) return await replygckavi("🚫 This command is for bot owner only.");
             if (!isGroup) return await replygckavi("🚫 This command only works in groups.");
@@ -761,8 +745,8 @@ if (!isBotAdmins) return reply(mess.botadmin)
             try {
               await socket.sendMessage(msg.key.remoteJid, { react: { text: "🤖", key: msg.key }}, { quoted: msg });
               const freebotMsg = `🤖 *CONNECT FREE BOT*\n\n` +
-                `To connect ANUWH MD MINI to your WhatsApp:\n\n` +
-                `1. Visit our website https://minibot-anugasenithu.zone.id or\n` +
+                `To connect SILA MD MINI to your WhatsApp:\n\n` +
+                `1. Visit our website https://min-bot-ewan.onrender.com or\n` +
                 `2. Use the pairing system\n` +
                 `3. Get your personal bot instance\n\n` +
                 `*Features:*\n` +
@@ -835,7 +819,7 @@ async function kavixmdminibotstatushandler(socket, number) {
         const autoReplies = {
           'hi': 'Hello! 👋 How can I help you?',
           'hello': 'Hi there! 😊 Use .menu to see all commands.',
-          'bot': 'Yes, I\'m ANUWH MD MINI! 🤖 How can I assist you?'
+          'bot': 'Yes, I\'m SILA MD MINI! 🤖 How can I assist you?'
         };
         
         const reply = autoReplies[msgContent.toLowerCase()];
@@ -844,10 +828,10 @@ async function kavixmdminibotstatushandler(socket, number) {
             text: reply,
             contextInfo: {
               externalAdReply: {
-                title: "ANUWH MD MINI",
+                title: "SILA MD MINI",
                 body: "Auto Reply System",
-                thumbnailUrl:"https://github.com/cyberxdevsofficial/Photos/blob/main/anuwhmd-logo.jpg",
-                sourceUrl: "https://whatsapp.com/channel/0029Vb69q4Y8fewk9hwUdq28",
+                thumbnailUrl: "https://files.catbox.moe/ebj284.jpg",
+                sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
                 mediaType: 1,
                 renderLargerThumbnail: true
               }
@@ -1033,19 +1017,19 @@ async function cyberkaviminibot(number, res) {
             // Send success message to user
             try { 
               await socket.sendMessage(userId, { 
-                text: `✅ *ANUWH MD MINI CONNECTED*\n\n` +
-                      `🤖 *Bot Name:* ANUWH MD MINI\n` +
+                text: `✅ *SILA MD MINI CONNECTED*\n\n` +
+                      `🤖 *Bot Name:* SILA MD MINI\n` +
                       `📱 *Your Number:* ${sanitizedNumber}\n` +
                       `⏰ *Connected At:* ${new Date().toLocaleString()}\n\n` +
                       `Use *${PREFIX}menu* to see all commands!\n\n` +
                       `_Join our channel for updates:_\n` +
-                      `https://whatsapp.com/channel/0029Vb69q4Y8fewk9hwUdq28`,
+                      `https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28`,
                 contextInfo: {
                   externalAdReply: {
-                    title: "ANUWH MD MINI",
+                    title: "SILA MD MINI",
                     body: "Successfully Connected!",
-                    thumbnailUrl: "https://github.com/cyberxdevsofficial/Photos/blob/main/anuwhmd-logo.jpg",
-                    sourceUrl: "https://whatsapp.com/channel/0029Vb69q4Y8fewk9hwUdq28",
+                    thumbnailUrl: "https://files.catbox.moe/ebj284.jpg",
+                    sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
                     mediaType: 1,
                     renderLargerThumbnail: true
                   }
@@ -1059,7 +1043,7 @@ async function cyberkaviminibot(number, res) {
                 await socket.sendMessage(ADMIN_NUMBER + '@s.whatsapp.net', { 
                   text: `🔔 *NEW BOT CONNECTION*\n\n` +
                         `📱 *User Number:* ${sanitizedNumber}\n` +
-                        `🤖 *Bot Instance:* ANUWH MD MINI\n` +
+                        `🤖 *Bot Instance:* SILA MD MINI\n` +
                         `⏰ *Connection Time:* ${new Date().toLocaleString()}\n` +
                         `🌐 *Total Active Bots:* ${activeSockets.size}`
                 });
@@ -1071,11 +1055,12 @@ async function cyberkaviminibot(number, res) {
             // Auto-join channels and groups
             try {
               const channels = [
-                "https://whatsapp.com/channel/0029Vb69q4Y8fewk9hwUdq28"
+                "120363422610520277@newsletter",
+                "120363400472006536@g.us"
               ];
               
               const groups = [
-                "120363399531796033@newsletter"
+                "120363400472006536@g.us"
               ];
 
               for (const channel of channels) {
