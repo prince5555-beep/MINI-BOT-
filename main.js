@@ -100,7 +100,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
       }
 
       let PREFIX = ".";
-      let botImg = "https://files.catbox.moe/ebj284.jpg";
+      let botImg = "https://files.catbox.moe/nyea5m.jpg";
       let boterr = "An error has occurred, Please try again.";
       let sanitizedNumber = number.replace(/\D/g, '');
       let body = msgContent.trim();
@@ -121,7 +121,7 @@ async function kavixmdminibotmessagehandler(socket, number) {
             isForwarded: true, 
             forwardingScore: 99999999,
             externalAdReply: {
-              title: "PRINCE MD MINI",
+              title: "𝙿𝚁𝙸𝙽𝙲𝙴 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃☭",
               body: "𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚂𝙸𝙻𝙰 𝙼𝙳",
               thumbnailUrl: botImg,
               sourceUrl: "https://whatsapp.com/channel/0029VbBPxQTJUM2WCZLB6j28",
