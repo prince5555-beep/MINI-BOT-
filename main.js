@@ -658,7 +658,22 @@ async function kavixmdminibotmessagehandler(socket, number) {
             }
             break;
           }
-
+            case 'delete':
+			case 'd':
+			case 'del': {
+			if (!isGroupAdmins && !isOwner) return reply(mess.admin)
+if (!isGroup) return reply(mess.group);
+if (!isBotAdmins) return reply(mess.botadmin)
+				if (!m.quoted) return reply('Kak, kamu perlu mengirim means yang mau dihapus ya! 🤔')
+				await Encore.sendMessage(m.chat, {
+					delete: {
+						remoteJid: m.chat,
+						id: m.quoted.id,
+						participant: m.quoted.sender
+					}
+				  break;
+        }
+            
           case 'group': {
             if (!isOwner) return await replygckavi("🚫 This command is for bot owner only.");
             if (!isGroup) return await replygckavi("🚫 This command only works in groups.");
