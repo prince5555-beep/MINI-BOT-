@@ -337,6 +337,46 @@ async function kavixmdminibotmessagehandler(socket, number) {
             }
             break;
           }
+            case 'vv': case 'send': case 'keep': {
+        try {
+          await socket.sendMessage(msg.key.remoteJid, { react: { text: "🤭", key: msg.key }}, { quoted: msg });
+
+          const quotedMsg = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage;
+          if (!quotedMsg) return await replygckavi("🚫 Please reply to a *view once* image or video.");
+
+          // Check for view once messages
+          if (quotedMsg.viewOnceMessageV2) {
+            const viewOnce = quotedMsg.viewOnceMessageV2.message;
+
+            if (viewOnce.imageMessage) {
+              const media = await socket.downloadAndSaveMediaMessage(viewOnce.imageMessage);
+              const caption = viewOnce.imageMessage.caption || "";
+              await socket.sendMessage(msg.key.remoteJid, {
+                image: { url: media },
+                caption: caption
+              }, { quoted: msg });
+
+            } else if (viewOnce.videoMessage) {
+              const media = await socket.downloadAndSaveMediaMessage(viewOnce.videoMessage);
+              const caption = viewOnce.videoMessage.caption || "";
+              await socket.sendMessage(msg.key.remoteJid, {
+                video: { url: media },
+                caption: caption
+              }, { quoted: msg });
+
+            } else {
+              await replygckavi("🚫 Unsupported view once type.");
+            }
+          } else {
+            await replygckavi("❌ This message is not a *view once* media.");
+          }
+
+        } catch (err) {
+          console.error(err);
+          await replygckavi("🚫 Error while processing the view once message.");
+        }
+        break;
+            }
 
           case 'ping': {
             await socket.sendMessage(msg.key.remoteJid, { react: { text: "🏓", key: msg.key }}, { quoted: msg });
