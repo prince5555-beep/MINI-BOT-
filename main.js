@@ -183,8 +183,8 @@ async function kavixmdminibotmessagehandler(socket, number) {
 │    \`■ Command :\` .yts
 │  *🍃 Generate Youtube Serach Links*
 │
-│    \`■ Command :\` .tiktok
-│  *🍃 Download Tiktok Videos*
+│    \`■ Command :\` .tagall
+│  *🍃 Tagall member*
 │
 │    \`■ Command :\` .fb
 │  *🍃 Download Facebook Posts*
@@ -475,14 +475,14 @@ async function kavixmdminibotmessagehandler(socket, number) {
                     break;
             }
 
-          case 'tiktok': {
+         case 'tiktok': {
             try {
               await socket.sendMessage(msg.key.remoteJid, { react: { text: "📱", key: msg.key }}, { quoted: msg });
               const url = args[0];
               if (!url) return await replygckavi("🚫 Please provide a TikTok URL.");
               
               // Placeholder for TikTok API
-              const api = `https://api.example.com/tiktok?url=${encodeURIComponent(url)}`;
+              const api = `https://www.dark-yasiya-api.site/download/fbdl2?url=${encodeURIComponent(url)}`;
               // Implement TikTok download logic here
               await replygckavi("🔧 TikTok download feature coming soon...");
             } catch (e) {
