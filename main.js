@@ -637,13 +637,6 @@ socket.sendMessage(from, buttonMessage, { quoted: msg });
     break;
 }
 
-case 'credit': {
-  await socket.sendMessage(sender, { react: { text: '👋', key: msg.key } });
-  
-  const q = args.join(" ");
-  
-  if (!q) {
-    await socket.sendMessage(sender, {text: "*_Hey 🪄🤍_*
 
 *OUR MINI BOT LINK* 🫟
 
