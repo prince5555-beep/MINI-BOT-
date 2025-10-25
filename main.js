@@ -336,12 +336,13 @@ async function kavixmdminibotmessagehandler(socket, number) {
           }
 
           case 'ping': {
-            await socket.sendMessage(msg.key.remoteJid, { react: { text: "🏓", key: msg.key }}, { quoted: msg });
-            const start = Date.now();
-            const pingMsg = await socket.sendMessage(msg.key.remoteJid, { text: '🏓 Pinging...' }, { quoted: msg });
-            const ping = Date.now() - start;
-            await socket.sendMessage(msg.key.remoteJid, { text: `🏓 Pong! ${ping}ms`, edit: pingMsg.key });
-            break;
+                    const start = Date.now();
+                    await socket.sendMessage(sender, { text: '🏓 Pong!' });
+                    const latency = Date.now() - start;
+                    await socket.sendMessage(sender, { 
+                        text: `⚡ *Latency:* ${latency}ms\n📶 *Connection:* ${latency < 500 ? 'Excellent' : latency < 1000 ? 'Good' : 'Poor'}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
+                    });
+                    break;
           }
 
           case 'system': {
