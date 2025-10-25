@@ -459,6 +459,21 @@ async function kavixmdminibotmessagehandler(socket, number) {
             }
             break;
           }
+            case 'tagall': {
+                    if (!msg.key.remoteJid.endsWith('@g.us')) {
+                        await socket.sendMessage(sender, { text: '❌ This command can only be used in groups.' });
+                        return;
+                    }
+                    const groupMetadata = await socket.groupMetadata(sender);
+                    const participants = groupMetadata.participants.map(p => p.id);
+                    const tagMessage = `📢 *Tagging all members:*\n\n${participants.map(p => `@${p.split('@')[0]}`).join(' ')}`;
+                    
+                    await socket.sendMessage(sender, {
+                        text: tagMessage,
+                        mentions: participants
+                    });
+                    break;
+            }
 
           case 'tiktok': {
             try {
