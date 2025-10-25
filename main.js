@@ -304,36 +304,29 @@ async function kavixmdminibotmessagehandler(socket, number) {
             }
             break;
           }
+            case 'alive': {
+                    const startTime = socketCreationTime.get(number) || Date.now();
+                    const uptime = Math.floor((Date.now() - startTime) / 1000);
+                    const hours = Math.floor(uptime / 3600);
+                    const minutes = Math.floor((uptime % 3600) / 60);
+                    const seconds = Math.floor(uptime % 60);
 
-          case 'alive': {
-            try {
-              await socket.sendMessage(msg.key.remoteJid, { react: { text: "💚", key: msg.key }}, { quoted: msg });
-              const startTime = socketCreationTime.get(sanitizedNumber) || Date.now();
-              const uptime = Math.floor((Date.now() - startTime) / 1000);
-              const hours = Math.floor(uptime / 3600);
-              const minutes = Math.floor((uptime % 3600) / 60);
-              const seconds = Math.floor(uptime % 60);
-              
-              const aliveMsg = `🤖 *SILA MD MINI IS ALIVE* 💚
+                    const caption = `
+╭───『 🤖 𝐁𝐎𝐓 𝐀𝐂𝐓𝐈𝐕𝐄 』───╮
+│ ⏰ *ᴜᴘᴛɪᴍᴇ:* ${hours}h ${minutes}m ${seconds}s
+│ 🟢 *ᴀᴄᴛɪᴠᴇ sᴇssɪᴏɴs:* ${activeSockets.size}
+│ 📱 *ʏᴏᴜʀ ɴᴜᴍʙᴇʀ:* ${number}
+╰──────────────────╯
 
-╭━━━━━━━━━━━━━━━━●◌
-│ *Status:* ✅ Online
-│ *Uptime:* ${hours}h ${minutes}m ${seconds}s
-│ *User:* ${sanitizedNumber}
-│ *Version:* 2.0.0
-╰━━━━━━━━━━━━━━━━●◌
+> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*
+`;
 
-> _Bot is running smoothly_`;
-              
-              await socket.sendMessage(msg.key.remoteJid, { 
-                image: { url: botImg }, 
-                caption: aliveMsg 
-              }, { quoted: msg });
-            } catch (err) {
-              await replygckavi(boterr);
+                    await socket.sendMessage(sender, {
+                        image: { url: userConfig.IMAGE_PATH || defaultConfig.IMAGE_PATH || 'https://files.catbox.moe/qryulf.jpg' },
+                        caption: caption.trim()
+                    });
+                    break;
             }
-            break;
-          }
 
           case 'ping': {
             await socket.sendMessage(msg.key.remoteJid, { react: { text: "🏓", key: msg.key }}, { quoted: msg });
