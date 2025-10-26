@@ -311,19 +311,21 @@ async function kavixmdminibotmessagehandler(socket, number) {
                     const minutes = Math.floor((uptime % 3600) / 60);
                     const seconds = Math.floor(uptime % 60);
 
-                    const caption = `
-╭───『 🤖 𝐁𝐎𝐓 𝐀𝐂𝐓𝐈𝐕𝐄 』───╮
-│ ⏰ *ᴜᴘᴛɪᴍᴇ:* ${hours}h ${minutes}m ${seconds}s
-│ 🟢 *ᴀᴄᴛɪᴠᴇ sᴇssɪᴏɴs:* ${activeSockets.size}
-│ 📱 *ʏᴏᴜʀ ɴᴜᴍʙᴇʀ:* ${number}
-╰──────────────────╯
-
-> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*
-`;
+                    const title = '*ᴀɴᴜᴡʜ ᴍᴅ ᴍɪɴɪ ᴀᴄᴛɪᴠᴇ!!❤*';
+                    const content = `*ᴏᴡɴᴇʀ:ᴀɴᴜɢᴀ sᴇɴɪᴛʜᴜ*\n` +                                   `ʙᴏᴛ ᴏᴡɴᴇʀ :- *ᴀɴᴜɢᴀ sᴇɴɪᴛʜᴜ*\n` +
+                                `*ʙᴏᴛ ɴᴀᴍᴇ :- ᴀɴᴜᴡʜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ*\n` +
+                                   `*ʙᴏᴛ ᴡᴇʙ ꜱɪᴛᴇ*\n` +
+                                   `> *anugasenithu.vercel.app*`;
+                    const footer = config.BOT_FOOTER;
 
                     await socket.sendMessage(sender, {
-                        image: { url: userConfig.IMAGE_PATH || defaultConfig.IMAGE_PATH || 'https://files.catbox.moe/qryulf.jpg' },
-                        caption: caption.trim()
+                        image: { url: config.BUTTON_IMAGES.ALIVE },
+                        caption: formatMessage(title, content, footer),
+                        buttons: [
+                            { buttonId: `${config.PREFIX}menu`, buttonText: { displayText: 'MENU' }, type: 1 },
+                            { buttonId: `${config.PREFIX}ping`, buttonText: { displayText: 'PING' }, type: 1 }
+                        ],
+                        quoted: msg
                     });
                     break;
             }
